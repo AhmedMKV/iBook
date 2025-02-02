@@ -15,7 +15,7 @@ class IBookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       debugShowCheckedModeBanner: false,
       home: SplashView(),
     );
