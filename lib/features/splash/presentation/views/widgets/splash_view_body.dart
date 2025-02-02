@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ibook/constants.dart';
+import 'package:ibook/features/home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -16,19 +18,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-    slidingAnimation = Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward();
-
+    initSlidingAnimation();
+    navigateToHome();
   }
-@override
-  void dispose() {
 
+
+
+  @override
+  void dispose() {
     super.dispose();
     animationController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,18 +40,32 @@ class _SplashViewBodyState extends State<SplashViewBody>
           height: 15,
         ),
         AnimatedBuilder(
-          animation: slidingAnimation,
-          builder: (context,_) {
-            return SlideTransition(
-              position: slidingAnimation,
-              child: Text(
-                'Unlocking Minds, One Page at a Time',
-                style: TextStyle(fontSize: 24, fontFamily: kFont),
-              ),
-            );
-          }
-        )
+            animation: slidingAnimation,
+            builder: (context, _) {
+              return SlideTransition(
+                position: slidingAnimation,
+                child: Text(
+                  'Unlocking Minds, One Page at a Time',
+                  style: TextStyle(fontSize: 24, fontFamily: kFont),
+                ),
+              );
+            })
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
+  }
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: const Duration(milliseconds: 300));
+    });
   }
 }
