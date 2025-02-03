@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ibook/constants.dart';
+import 'package:ibook/core/utils/styles.dart';
 import 'package:ibook/features/home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -46,7 +47,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 position: slidingAnimation,
                 child: Text(
                   'Unlocking Minds, One Page at a Time',
-                  style: TextStyle(fontSize: 24, fontFamily: kFont),
+                  style: Styles.text22.copyWith(fontFamily: kFont,fontWeight: FontWeight.normal),
                 ),
               );
             })
