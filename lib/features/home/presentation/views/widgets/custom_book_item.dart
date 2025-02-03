@@ -9,18 +9,14 @@ class CustomBookItem extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child:
-      SizedBox(
-       width: MediaQuery.of(context).size.width*.25,
-        child: AspectRatio(
-          aspectRatio:.7,
-          child: Container(
-
-            decoration: BoxDecoration(
-
-                borderRadius: BorderRadius.circular(8),
-                image: DecorationImage(
-                    image: AssetImage(kTestImage),fit: BoxFit.fill)),
+      AspectRatio(
+        aspectRatio:.7,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10)
           ),
+
+          child: Image.asset(kTestImage,fit: BoxFit.fill,),
         ),
       ),
     );

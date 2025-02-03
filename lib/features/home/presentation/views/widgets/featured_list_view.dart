@@ -6,11 +6,21 @@ class FeaturedListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 7,
-      scrollDirection: Axis.horizontal,
-      itemBuilder:(context,index)=>CustomBookItem() ,
+    return
+      SizedBox(
+        height: MediaQuery.of(context).size.height*.3,
+        child: ListView.builder(
 
-    );
+        itemCount: 7,
+        scrollDirection: Axis.horizontal,
+        itemBuilder:(context,index){
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: CustomBookItem(),
+          );
+          } ,
+
+            ),
+      );
   }
 }
