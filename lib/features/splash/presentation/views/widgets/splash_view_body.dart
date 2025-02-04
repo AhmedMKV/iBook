@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:ibook/constants.dart';
 import 'package:ibook/core/utils/styles.dart';
 import 'package:ibook/features/home/presentation/views/home_view.dart';
@@ -65,8 +66,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: const Duration(milliseconds: 300));
+      GoRouter.of(context).push("/homeView");
     });
   }
 }

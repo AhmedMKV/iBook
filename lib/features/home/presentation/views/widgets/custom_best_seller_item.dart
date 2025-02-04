@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:ibook/constants.dart';
 import 'package:ibook/core/utils/styles.dart';
+import 'package:ibook/features/home/presentation/views/book_details_view.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
   const CustomBestSellerItem({super.key});
@@ -10,7 +13,9 @@ class CustomBestSellerItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push('/bookDetailsView');
+         },
         child: SizedBox(
           height: 130,
           child: Row(
