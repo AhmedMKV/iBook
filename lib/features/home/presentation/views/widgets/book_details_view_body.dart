@@ -3,7 +3,7 @@ import 'package:ibook/core/utils/styles.dart';
 import 'package:ibook/features/home/presentation/views/widgets/books_button.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_image.dart';
-
+import 'package:ibook/features/home/presentation/views/widgets/similar_books_list_view.dart';
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
@@ -17,8 +17,10 @@ class BookDetailsViewBody extends StatelessWidget {
           height: 15,
         ),
         CustomBookImage(),
-        SizedBox(height: 30,),
-         Text(
+        SizedBox(
+          height: 30,
+        ),
+        Text(
           'The Jungle Book ',
           style: Styles.text30,
         ),
@@ -26,18 +28,47 @@ class BookDetailsViewBody extends StatelessWidget {
           'The author name ',
           style: Styles.text16.copyWith(color: Colors.grey),
         ),
-        SizedBox(height: 5,),
+        SizedBox(
+          height: 5,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.star,color: Colors.yellow,),
-            Text('4.9',style: Styles.text22.copyWith(fontSize: 18),),
-            SizedBox(width: 3,),
-            Text('(23333)',style: Styles.text14,)
+            Icon(
+              Icons.star,
+              color: Colors.yellow,
+            ),
+            Text(
+              '4.9',
+              style: Styles.text22.copyWith(fontSize: 18),
+            ),
+            SizedBox(
+              width: 3,
+            ),
+            Text(
+              '(23333)',
+              style: Styles.text14,
+            )
           ],
         ),
-        SizedBox(height: 25,),
-        BooksButton()
+        SizedBox(
+          height: 25,
+        ),
+        BooksButton(),
+        SizedBox(
+          height: 20,
+        ),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text('You can also like ',
+                  style: Styles.text16.copyWith(fontSize: 19)),
+            )),
+        SizedBox(
+          height: 8,
+        ),
+        Expanded(child: SimilarBooksListView())
       ],
     );
   }
