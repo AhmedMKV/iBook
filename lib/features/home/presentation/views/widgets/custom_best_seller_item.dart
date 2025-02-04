@@ -5,8 +5,8 @@ import 'package:ibook/constants.dart';
 import 'package:ibook/core/utils/styles.dart';
 import 'package:ibook/features/home/presentation/views/book_details_view.dart';
 
-class CustomBestSellerItem extends StatelessWidget {
-  const CustomBestSellerItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
