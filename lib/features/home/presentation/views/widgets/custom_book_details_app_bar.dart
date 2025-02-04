@@ -18,12 +18,14 @@ class CustomBookDetailsAppBar extends StatelessWidget {
               icon: Icon(
                 Icons.close,
                 color: Colors.white,
+                size: 34,
               )),
           IconButton(
               onPressed: () {},
               icon: Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
+                size: 34,
               ))
         ],
       ),

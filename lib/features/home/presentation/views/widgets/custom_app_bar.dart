@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
             height: 55,
           ),
           Spacer(),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search,size: 34,))
+          IconButton(onPressed: () {}, icon: Icon(Icons.search,size: 34,color: Colors.white,))
         ],
       ),
     );

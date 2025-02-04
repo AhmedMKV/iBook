@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ibook/core/utils/styles.dart';
+import 'package:ibook/features/home/presentation/views/widgets/books_button.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
+import 'package:ibook/features/home/presentation/views/widgets/custom_book_image.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -7,8 +10,34 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CustomBookDetailsAppBar()
+        CustomBookDetailsAppBar(),
+        SizedBox(
+          height: 15,
+        ),
+        CustomBookImage(),
+        SizedBox(height: 30,),
+         Text(
+          'The Jungle Book ',
+          style: Styles.text30,
+        ),
+        Text(
+          'The author name ',
+          style: Styles.text16.copyWith(color: Colors.grey),
+        ),
+        SizedBox(height: 5,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.star,color: Colors.yellow,),
+            Text('4.9',style: Styles.text22.copyWith(fontSize: 18),),
+            SizedBox(width: 3,),
+            Text('(23333)',style: Styles.text14,)
+          ],
+        ),
+        SizedBox(height: 25,),
+        BooksButton()
       ],
     );
   }
