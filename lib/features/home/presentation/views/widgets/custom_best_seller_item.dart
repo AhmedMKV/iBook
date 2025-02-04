@@ -42,6 +42,7 @@ class CustomBestSellerItem extends StatelessWidget {
                       style: Styles.text22.copyWith(
                           fontFamily: kFont, fontWeight: FontWeight.normal),
                     ),
+                    SizedBox(height: 4 ),
                     Text('This is the author name ', style: Styles.text14),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,9 +51,13 @@ class CustomBestSellerItem extends StatelessWidget {
                           '19.99 ',
                           style: Styles.text22.copyWith(fontWeight: FontWeight.bold),
                         ),
-                        Text(
-                          '4.9',
-                          style: Styles.text22,
+                        Row(
+                          children: [
+                            Icon(Icons.star,color: Colors.yellow,),
+                            Text('4.9',style: Styles.text22.copyWith(fontSize: 18),),
+                            SizedBox(width: 3,),
+                            Text('(23333)',style: Styles.text14,)
+                          ],
                         )
                       ],
                     )
