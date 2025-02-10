@@ -1,12 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:ibook/constants.dart';
 import 'package:ibook/core/utils/styles.dart';
+import 'package:ibook/features/home/data/models/book_model/BookModel.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.book});
+final BookModel book ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,15 +21,15 @@ class BookListViewItem extends StatelessWidget {
           height: 130,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: .7,
-                child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  child: Image.asset(
-                    kTestImage,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: AspectRatio(
+                  aspectRatio: .7,
+                  child: CachedNetworkImage(
+
+                    imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
                     fit: BoxFit.fill,
-                  ),
+                  )
                 ),
               ),
               SizedBox(
@@ -40,19 +42,19 @@ class BookListViewItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Harry Potter and the goblet of fire ',
+                      book.volumeInfo!.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.text22.copyWith(
                           fontFamily: kFont, fontWeight: FontWeight.normal),
                     ),
                     SizedBox(height: 4 ),
-                    Text('This is the author name ', style: Styles.text14),
+                    Text(book.volumeInfo!.authors![0], style: Styles.text14),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '19.99 ',
+                          'Free',
                           style: Styles.text22.copyWith(fontWeight: FontWeight.bold),
                         ),
                         Row(
