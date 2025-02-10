@@ -6,7 +6,7 @@ import 'package:ibook/core/utils/app_router.dart';
 import 'package:ibook/core/utils/service_locator.dart';
 import 'package:ibook/features/home/data/repos/home_repo_impl.dart';
 import 'package:ibook/features/home/presentation/manager/featured%20books%20cubit/featured_books_cubit.dart';
-import 'package:ibook/features/home/presentation/manager/lates%20books%20cubit/latest_books_cubit.dart';
+import 'package:ibook/features/home/presentation/manager/latest%20books%20cubit/latest_books_cubit.dart';
 
 import 'constants.dart';
 
@@ -26,7 +26,7 @@ class IBookApp extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => LatestBooksCubit(

@@ -33,7 +33,7 @@ class ServerFailure extends Failures{
         return ServerFailure('Connection Error');
       case DioExceptionType.unknown:
         // TODO: Handle this case.
-        return ServerFailure('Unexpected Error ,Please ry again');
+        return ServerFailure('Unexpected Error ,Please try again');
 
         }
   }

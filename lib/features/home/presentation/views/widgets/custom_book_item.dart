@@ -1,11 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ibook/constants.dart';
-import 'package:ibook/features/home/presentation/views/book_details_view.dart';
+
 
 class CustomBookItem extends StatelessWidget {
-  const CustomBookItem({super.key});
-
+  const CustomBookItem({super.key, required this.imageUrl});
+final String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -13,14 +13,14 @@ class CustomBookItem extends StatelessWidget {
      GoRouter.of(context).push('/bookDetailsView');
       },
       child:
-      AspectRatio(
-        aspectRatio:.7,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10)
+      ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: AspectRatio(
+          aspectRatio:.7,
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: imageUrl!,
           ),
-
-          child: Image.asset(kTestImage,fit: BoxFit.fill,),
         ),
       ),
     );

@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 
 import 'package:ibook/constants.dart';
 import 'package:ibook/core/utils/styles.dart';
-import 'package:ibook/features/home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
