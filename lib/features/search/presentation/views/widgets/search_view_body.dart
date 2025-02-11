@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibook/core/utils/styles.dart';
-import 'package:ibook/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:ibook/features/home/presentation/views/widgets/latest_release_list_view.dart';
 import 'package:ibook/features/search/presentation/views/widgets/custom_search_text_field.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -30,7 +30,7 @@ class SearchViewBody extends StatelessWidget {
             ),
           ),
           SliverFillRemaining(
-            child: BestSellerListView(),
+            child: LatestReleaseListView(),
           )
         ],
       ),

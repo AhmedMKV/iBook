@@ -25,7 +25,7 @@ class BooksButton extends StatelessWidget {
 
               child: Center(
                 child: Text(
-                  '19.99 ',
+                  'Free ',
                   style: Styles.text22.copyWith(fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,
                 ),
               ),

@@ -4,8 +4,8 @@ import 'package:ibook/core/utils/styles.dart';
 import 'package:ibook/features/home/presentation/manager/latest%20books%20cubit/latest_books_cubit.dart';
 import 'package:ibook/features/home/presentation/views/widgets/book_list_view_item.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class LatestReleaseListView extends StatelessWidget {
+  const LatestReleaseListView({super.key});
 
   @override
   Widget build(BuildContext context) {

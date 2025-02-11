@@ -15,7 +15,7 @@ final BookModel book ;
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: InkWell(
         onTap: () {
-          GoRouter.of(context).push('/bookDetailsView');
+          GoRouter.of(context).push('/bookDetailsView',extra: book);
          },
         child: SizedBox(
           height: 130,

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ibook/core/utils/styles.dart';
+import 'package:ibook/features/home/data/models/book_model/BookModel.dart';
 import 'package:ibook/features/home/presentation/views/widgets/books_button.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:ibook/features/home/presentation/views/widgets/similar_books_list_view.dart';
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.book});
+final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,16 +17,16 @@ class BookDetailsViewBody extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        CustomBookImage(),
+        CustomBookImage(imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,),
         SizedBox(
           height: 30,
         ),
         Text(
-          'The Jungle Book ',
+          book.volumeInfo!.title!,
           style: Styles.text30,
         ),
         Text(
-          'The author name ',
+          book.volumeInfo!.authors![0],
           style: Styles.text16.copyWith(color: Colors.grey),
         ),
         SizedBox(
