@@ -6,22 +6,27 @@ import 'package:ibook/features/home/presentation/views/widgets/book_details_view
 
 class BookDetailsView extends StatefulWidget {
   const BookDetailsView({super.key, required this.book});
- final BookModel book;
+
+  final BookModel book;
+
   @override
   State<BookDetailsView> createState() => _BookDetailsViewState();
 }
 
 class _BookDetailsViewState extends State<BookDetailsView> {
-
   @override
   void initState() {
-    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(category: widget.book.volumeInfo!.categories![0]);
+    BlocProvider.of<SimilarBooksCubit>(context)
+        .fetchSimilarBooks(category: widget.book.volumeInfo!.categories![0]);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BookDetailsViewBody(book: widget.book,),
+      body: BookDetailsViewBody(
+        book: widget.book,
+      ),
     );
   }
 }

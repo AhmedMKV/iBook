@@ -5,7 +5,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 class BooksButton extends StatelessWidget {
   const BooksButton({super.key, required this.book});
-final BookModel book;
+
+  final BookModel book;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,41 +16,40 @@ final BookModel book;
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
-            onTap: ()async{
-              Uri uri =Uri.parse(book.volumeInfo!.previewLink!);
+            onTap: () async {
+              Uri uri = Uri.parse(book.volumeInfo!.previewLink!);
               if (await canLaunchUrl(uri)) {
                 await launchUrl(uri);
-
               }
             },
             child: Container(
-              width: MediaQuery.of(context).size.width*.4,
+              width: MediaQuery.of(context).size.width * .4,
               height: 50,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomLeft: Radius.circular(16),
-              )),
-
+                    topLeft: Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
+                  )),
               child: Center(
                 child: Text(
                   'Free ',
-                  style: Styles.text22.copyWith(fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,
+                  style: Styles.text22.copyWith(
+                      fontWeight: FontWeight.bold, color: Colors.black),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
           ),
           InkWell(
-            onTap: ()async{
-              Uri uri =Uri.parse(book.volumeInfo!.previewLink!);
+            onTap: () async {
+              Uri uri = Uri.parse(book.volumeInfo!.previewLink!);
               if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-
+                await launchUrl(uri);
               }
             },
             child: Container(
-              width: MediaQuery.of(context).size.width*.4,
+              width: MediaQuery.of(context).size.width * .4,
               height: 50,
               decoration: BoxDecoration(
                   color: Color(0xffEF8265),
@@ -56,12 +57,11 @@ final BookModel book;
                     topRight: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   )),
-
-              child:
-              Center(
+              child: Center(
                 child: Text(
                   'Free Preview ',
-                  style: Styles.text16,textAlign: TextAlign.center,
+                  style: Styles.text16,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),

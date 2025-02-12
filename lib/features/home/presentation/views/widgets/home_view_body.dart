@@ -18,19 +18,21 @@ class HomeViewBody extends StatelessWidget {
             children: [
               CustomAppBar(),
               FeaturedListView(),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: const EdgeInsets.all(16),
-                child: Text('Latest Releases ',
-                  style: Styles.text22,),
+                child: Text(
+                  'Latest Releases ',
+                  style: Styles.text22,
+                ),
               ),
-
             ],
           ),
         ),
         SliverFillRemaining(
-          child: LatestReleaseListView()
-          ,
+          child: LatestReleaseListView(),
         )
       ],
     );

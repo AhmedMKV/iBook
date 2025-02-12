@@ -3,16 +3,17 @@ import 'Pdf.dart';
 
 class AccessInfo {
   AccessInfo({
-      this.country, 
-      this.viewability, 
-      this.embeddable, 
-      this.publicDomain, 
-      this.textToSpeechPermission, 
-      this.epub, 
-      this.pdf, 
-      this.webReaderLink, 
-      this.accessViewStatus, 
-      this.quoteSharingAllowed,});
+    this.country,
+    this.viewability,
+    this.embeddable,
+    this.publicDomain,
+    this.textToSpeechPermission,
+    this.epub,
+    this.pdf,
+    this.webReaderLink,
+    this.accessViewStatus,
+    this.quoteSharingAllowed,
+  });
 
   AccessInfo.fromJson(dynamic json) {
     country = json['country'];
@@ -26,6 +27,7 @@ class AccessInfo {
     accessViewStatus = json['accessViewStatus'];
     quoteSharingAllowed = json['quoteSharingAllowed'];
   }
+
   String? country;
   String? viewability;
   bool? embeddable;
@@ -55,5 +57,4 @@ class AccessInfo {
     map['quoteSharingAllowed'] = quoteSharingAllowed;
     return map;
   }
-
 }

@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:ibook/constants.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({super.key, required this.imageUrl});
-final String imageUrl;
+
+  final String imageUrl;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,10 +16,9 @@ final String imageUrl;
             aspectRatio: .7,
             child: CachedNetworkImage(
               fit: BoxFit.fill,
-              imageUrl: imageUrl,)
-        ),
+              imageUrl: imageUrl,
+            )),
       ),
     );
   }
 }
-

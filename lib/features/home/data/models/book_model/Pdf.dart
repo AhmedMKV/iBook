@@ -1,12 +1,14 @@
 class Pdf {
   Pdf({
-      this.isAvailable, 
-      this.acsTokenLink,});
+    this.isAvailable,
+    this.acsTokenLink,
+  });
 
   Pdf.fromJson(dynamic json) {
     isAvailable = json['isAvailable'];
     acsTokenLink = json['acsTokenLink'];
   }
+
   bool? isAvailable;
   String? acsTokenLink;
 
@@ -16,5 +18,4 @@ class Pdf {
     map['acsTokenLink'] = acsTokenLink;
     return map;
   }
-
 }

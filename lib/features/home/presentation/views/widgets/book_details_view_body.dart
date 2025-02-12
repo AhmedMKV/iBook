@@ -5,9 +5,12 @@ import 'package:ibook/features/home/presentation/views/widgets/books_button.dart
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:ibook/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:ibook/features/home/presentation/views/widgets/similar_books_list_view.dart';
+
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key, required this.book});
-final BookModel book;
+
+  final BookModel book;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,7 +20,9 @@ final BookModel book;
         SizedBox(
           height: 15,
         ),
-        CustomBookImage(imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,),
+        CustomBookImage(
+          imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+        ),
         SizedBox(
           height: 30,
         ),
@@ -55,7 +60,9 @@ final BookModel book;
         SizedBox(
           height: 25,
         ),
-        BooksButton(book: book,),
+        BooksButton(
+          book: book,
+        ),
         SizedBox(
           height: 20,
         ),

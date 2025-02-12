@@ -13,27 +13,27 @@ class FeaturedListView extends StatelessWidget {
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
           return SizedBox(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * .3,
+            height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
-           itemCount: state.books.length,
-
+              itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomBookItem(book: state.books[index],),
+                  child: CustomBookItem(
+                    book: state.books[index],
+                  ),
                 );
               },
-          
             ),
           );
-        }else if (state is FeaturedBooksFailed){
-          return Text(state.errMessage,style: Styles.text22,);
-        }else{
-         return Center(child: CircularProgressIndicator());
+        } else if (state is FeaturedBooksFailed) {
+          return Text(
+            state.errMessage,
+            style: Styles.text22,
+          );
+        } else {
+          return Center(child: CircularProgressIndicator());
         }
       },
     );

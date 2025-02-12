@@ -22,11 +22,12 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: '/bookDetailsView',
-        builder: (context, state) =>
-            BlocProvider(
-              create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
-              child: BookDetailsView(book: state.extra as BookModel,),
-            ),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+          child: BookDetailsView(
+            book: state.extra as BookModel,
+          ),
+        ),
       ),
       GoRoute(
         path: '/searchView',
@@ -34,5 +35,4 @@ abstract class AppRouter {
       ),
     ],
   );
-
 }

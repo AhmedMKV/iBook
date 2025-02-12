@@ -1,15 +1,16 @@
 import 'package:dio/dio.dart';
 
-abstract class Failures{
+abstract class Failures {
   final String errMessage;
 
   Failures(this.errMessage);
 }
-class ServerFailure extends Failures{
+
+class ServerFailure extends Failures {
   ServerFailure(super.errMessage);
 
-  factory ServerFailure.fromDioException(DioException dioException){
-    switch(dioException.type){
+  factory ServerFailure.fromDioException(DioException dioException) {
+    switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
         // TODO: Handle this case.
         return ServerFailure('Connection Timeout');
@@ -34,7 +35,6 @@ class ServerFailure extends Failures{
       case DioExceptionType.unknown:
         // TODO: Handle this case.
         return ServerFailure('Unexpected Error ,Please try again');
-
-        }
+    }
   }
 }

@@ -23,8 +23,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     navigateToHome();
   }
 
-
-
   @override
   void dispose() {
     super.dispose();
@@ -47,7 +45,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 position: slidingAnimation,
                 child: Text(
                   'Unlocking Minds, One Page at a Time',
-                  style: Styles.text22.copyWith(fontFamily: kFont,fontWeight: FontWeight.normal),
+                  style: Styles.text22.copyWith(
+                      fontFamily: kFont, fontWeight: FontWeight.normal),
                 ),
               );
             })
@@ -63,6 +62,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             .animate(animationController);
     animationController.forward();
   }
+
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
       GoRouter.of(context).push("/homeView");

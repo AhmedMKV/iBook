@@ -11,7 +11,7 @@ import 'package:ibook/features/home/presentation/manager/latest%20books%20cubit/
 import 'constants.dart';
 
 void main() {
-setup();
+  setup();
   runApp(const IBookApp());
 }
 
