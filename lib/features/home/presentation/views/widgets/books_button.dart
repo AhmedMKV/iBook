@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ibook/core/utils/styles.dart';
+import 'package:ibook/features/home/data/models/book_model/BookModel.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksButton extends StatelessWidget {
-  const BooksButton({super.key});
-
+  const BooksButton({super.key, required this.book});
+final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +14,13 @@ class BooksButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
-            onTap: (){},
+            onTap: ()async{
+              Uri uri =Uri.parse(book.volumeInfo!.previewLink!);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri);
+
+              }
+            },
             child: Container(
               width: MediaQuery.of(context).size.width*.4,
               height: 50,
@@ -32,7 +40,13 @@ class BooksButton extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: (){},
+            onTap: ()async{
+              Uri uri =Uri.parse(book.volumeInfo!.previewLink!);
+              if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+
+              }
+            },
             child: Container(
               width: MediaQuery.of(context).size.width*.4,
               height: 50,

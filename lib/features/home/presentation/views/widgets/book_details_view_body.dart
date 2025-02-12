@@ -55,7 +55,7 @@ final BookModel book;
         SizedBox(
           height: 25,
         ),
-        BooksButton(),
+        BooksButton(book: book,),
         SizedBox(
           height: 20,
         ),
